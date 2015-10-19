@@ -88,11 +88,11 @@
 
     // 13.
     // Your Email address. Will be used in contact forms.
-    define( 'K_EMAIL_TO', 'youremail@gmail.com' );
+    define( 'K_EMAIL_TO', 'cunhafernandofj@gmail.com' );
 
     // 14.
     // Will be used as the sender of messages delivered by contact forms to the address above.
-    define( 'K_EMAIL_FROM', 'contact@yourdomain.com' );
+    define( 'K_EMAIL_FROM', 'fernando.cunha@phocusweb.com.br' );
 
     // 15.
     // By default the inbuilt php function 'mail()' is used to deliver messages.
@@ -177,4 +177,4 @@
     // <a href="http://www.couchcms.com/" title="CouchCMS - Simple Open-Source Content Management">CouchCMS</a></div>
     //
     // Failing to do so will constitute a violation of the CPAL license this software is provided under.
-    define( 'K_REMOVE_FOOTER_LINK', 0 );
+    define( 'K_REMOVE_FOOTER_LINK', 1 );
