@@ -84,12 +84,12 @@
                 <ul class="pager">
                     <cms:if k_paginate_link_next >
                     <li class="next">
-                        <a href="<cms:show k_paginate_link_next />">Postagens Novas &rarr;</a>
+                        <a href="<cms:show k_paginate_link_next />">&larr; Postagens Antigas</a>
                     </li>
                     </cms:if>
                     <cms:if k_paginate_link_prev >
                     <li class="next">
-                        <a href="<cms:show k_paginate_link_prev />">&larr; Postagens Antigas</a>
+                        <a href="<cms:show k_paginate_link_prev />">Postagens Novas &rarr;</a>
                     </li>
                     </cms:if>
                 </ul>

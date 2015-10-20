@@ -10,21 +10,21 @@
 
 				<cms:if k_process_comment_success>
 					<cms:send_mail from=k_email_from to=k_email_to subject='Comment posted'>
-						The following comment has been posted at your site:
+						O seguinte comentário foi postado em seu blog:
 						<cms:show k_success />
 					</cms:send_mail>
 					   
 					<div class="k_successmessage">
 						<p>
-							Thank you for the feed back! <br>
-							Your comment awaits moderation and will be published as soon as reviewed by the Admin.
+							Obrigado pelo seu comentário! <br>
+							Seu comentário aguarda moderação e será publicado assim que revista pela Administração.
 						</p>
 					</div>
 				<cms:else />
 					<div class="k_errormessage">
 						<p>
-							Could not post comment! <br>
-							The following error occured while processing your comment:<br>
+							Não foi possível postar seu comentário! <br>
+							Ocorreu o seguinte erro ao processar o seu comentário: <br>
 							<cms:show k_process_comment_error />
 						</p>
 					</div>
@@ -35,7 +35,7 @@
 		   
 				<cms:if k_error >
 					<div class="k_errormessage">
-						<h2>Fields incomplete!</h2>
+						<h2>Um ou mais campos incompletos!</h2>
 						<ul>
 							<cms:each k_error >
 								<li><cms:show item /></li>
@@ -47,21 +47,17 @@
 				<cms:if k_logged_out >
 					<p class="comment-input">
 						<cms:input type="text" name="k_author" size="22" tabindex="1" required="1"/>
-						<label for="author"><small>Name *</small></label>
+						<label for="author"><small>Nome *</small></label>
 					</p>
 
 					<p class="comment-input">
 						<cms:input type="text" name="k_email" size="22" tabindex="2" validator="email" required="1"/>
-						<label for="email"><small>Email * (will not be published)</small></label>
+						<label for="email"><small>Email * (não será publicado)</small></label>
 					</p>
 
-					<p class="comment-input">
-						<input type="text" name="k_link" value="http://" size="22" tabindex="3" />
-						<label for="link"><small>Website</small></label>
-					</p>
 				<cms:else />
 					<p>
-						Logged in as <b><cms:show k_user_title /></b>.
+						Logado como <b><cms:show k_user_title /></b>.
 						<a href="<cms:show k_logout_link />" onclick="if( confirm('Are you sure you want to logout?') ) { return true; } return false;">Logout &raquo;</a>
 					</p>
 				</cms:if>
@@ -74,14 +70,14 @@
 					<br>
 					<small>
 					<cms:html_encode>
-						You can use the following HTML tags: <a><br><strong><b><em><i><blockquote><pre><code><ul><ol><li><del>
+						Você não poderá usar as seguintes tags de HTML: <a><br><strong><b><em><i><blockquote><pre><code><ul><ol><li><del>
 					</cms:html_encode>
 					</small>
 				</p>
 
 				<cms:if k_logged_out >
 					<p class="comment-input">
-						<label for="captcha"><small>Please enter this word in the textbox below</small></label><br>
+						<label for="captcha"><small>Por favor digitar essas letras na caixa de texto abaixo</small></label><br>
 						<cms:input type="captcha" name="captcha" format='i-r-t' />
 					</p>
 				</cms:if>

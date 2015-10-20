@@ -1,3 +1,5 @@
+<?php require_once( 'afadmin/cms.php' ); ?>
+<cms:template title='Contato' />
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -43,9 +45,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Contact Me</h1>
+                        <h1>Entre em contato</h1>
                         <hr class="small">
-                        <span class="subheading">Have questions? I have answers (maybe).</span>
+                        <span class="subheading">Você tem uma pergunta? Talvez eu tenha a resposta.</span>
                     </div>
                 </div>
             </div>
@@ -55,48 +57,118 @@
     <!-- Main Content -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
+            <div class="col-lg-8 col-md-10">
+                <cms:editable name='contact_intro' label='Texto de introdução' type='richtext' >
+                    <p>Quer entrar em contato comigo? Preencha o formulário abaixo para enviar-me uma mensagem e eu vou tentar voltar para você dentro de 24 horas!</p>
+                </cms:editable>
                 <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
                 <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
                 <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-                <form name="sentMessage" id="contactForm" novalidate>
+                <cms:form action='' method='post' id='contact_form' >
+                
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                            <label for="name">Nome</label>
+                            <cms:input type='text' name='name' placeholder="Nome" id='name' required='1'/>
+                            <cms:if k_error_name>
+                                <p id='name_error' class='error' style="display:block">Por favor insira um nome</p>
+                            </cms:if>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                            <label for="email">Endereço de email</label>
+                            <cms:input type='text' name='email' placeholder="Email" id='email' required='1' validator='email' />
+                            <cms:if k_error_email>
+                                <p id='email_error' class='error' style="display:block">Por favor insira um email válido</p>
+                            </cms:if>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Phone Number</label>
-                            <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            <label for="telephone">Telefone</label>
+                            <cms:input type='text' name='telephone' placeholder="Telefone" id='telephone' required='1' />
+                            <cms:if k_error_telephone>
+                                <p id='telephone_error' class='error' style="display:block">Por favor insira um telefone</p>
+                            </cms:if>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Message</label>
-                            <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <label for="subject">Assunto</label>
+                            <cms:input type='text' name='subject' placeholder="Assunto" id='subject' required='1' />
+                            <cms:if k_error_subject>
+                                <p id='subject_error' class='error' style="display:block">Por favor insira um assunto</p>
+                            </cms:if>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label for="message">Mensagem</label>
+                            <cms:input type='textarea' name='message' placeholder="Mensagem" id='message' required='1' rows="10" cols="60" ></cms:input>
+                            <cms:if k_error_message>
+                                <p id='message_error' class='error' style="display:block">Por favor insira sua mensagem</p>
+                            </cms:if>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <br>
-                    <div id="success"></div>
+                    <cms:if k_success >
+                        <p id="mail_success" class="success" style="diplay:block">Obrigado. Eu vou lhe responder o mais breve possível.</p>
+                        <cms:send_mail from=k_email_from to=k_email_to subject='Feedback de seu site'>
+                            A seguir, um email enviado por um visitante de seu site:
+                            <cms:show k_success />
+                        </cms:send_mail> 
+                    </cms:if>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-default">Send</button>
+                            <button type="submit" class="btn btn-default">Enviar</button>
                         </div>
                     </div>
-                </form>
+                    
+                </cms:form>
+            </div>
+            <div class="col-lg-4 col-md-2">
+                <cms:editable name='contact_details' label='Detalhes de contato' type='richtext' >
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Endereço e telefone</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <strong>Antônio Farias</strong><br />
+                                    Rua Minha Rua, 999<br />
+                                    Taquaritinga do Norte<br />
+                                    Brasil<br /><br />
+                                </li>
+                                <li>
+                                    Telefone: (81) 9999-9999
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>Email</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="mailto:anfiam@uol.com.br">anfiam@uol.com.br</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </cms:editable>
             </div>
         </div>
     </div>
@@ -113,8 +185,9 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
+    <!--<script src="js/clean-blog.min.js"></script>-->
 
 </body>
 
 </html>
+<?php COUCH::invoke(); ?>

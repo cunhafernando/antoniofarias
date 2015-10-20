@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Blog</title>
+    <title>Antônio Farias - Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -99,45 +99,34 @@
                 <hr>
 
                 <!-- Posted Comments -->
-
+                <cms:if k_comments_count >
+                <cms:comments page_id=k_page_id order='asc' limit='5' paginate='1' >
                 <!-- Comment -->
                 <div class="media">
+                    <div class="col-lg-1 col-md-1"
                     <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                        <cms:gravatar email="<cms:show k_comment_author_email />" size="55" />   
                     </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
+                    <a name="cms:show k_comment_anchor />"></a>
+                    </div>
+                    <div class="col-lg-11 col-md-11">
+                        <h4 class="media-heading"><cms:show k_comment_author />
+                            <small><cms:date k_comment_date format='F j, Y' /></small>
                         </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                        <cms:show k_comment />
                     </div>
                 </div>
+                <cms:paginator />
+                </cms:comments>
+                <cms:else />
+                    Sem comentários
+                </cms:if>
 
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        <!-- Nested Comment -->
-                        <div class="media">
-                            <a class="pull-left" href="#">
-                                <img class="media-object" src="http://placehold.it/64x64" alt="">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nested Start Bootstrap
-                                    <small>August 25, 2014 at 9:30 PM</small>
-                                </h4>
-                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                            </div>
-                        </div>
-                        <!-- End Nested Comment -->
-                    </div>
-                </div>
+                <ul class="pager">
+                    <li class="next">
+                        <a href="<cms:link masterpage='blog.php' />">&larr; Voltar ao blog</a>
+                    </li>
+                </ul>
 
             </div>
 

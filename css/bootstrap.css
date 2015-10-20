@@ -6582,3 +6582,8 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+.error,
+.success              {display:none;}
+p.error               {margin-left:140px; margin-top:10px;}

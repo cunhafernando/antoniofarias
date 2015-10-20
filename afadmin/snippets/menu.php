@@ -16,16 +16,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="<cms:link 'index.php' />" <cms:if k_template_name=='index.php'>class="current"</cms:if>>Home</a>
                     </li>
                     <li>
-                        <a href="about.php">Sobre</a>
+                        <a href="<cms:link 'about.php' />" <cms:if k_template_name=='about.php'>class="current"</cms:if>>Sobre</a>
                     </li>
                     <!--<li>
                         <a href="post.html">Sample Post</a>
                     </li>-->
                     <li>
-                        <a href="contact.php">Contato</a>
+                        <a href="<cms:link 'contact.php' />" <cms:if k_template_name=='contact.php'>class="current"</cms:if>>Contato</a>
                     </li>
                 </ul>
             </div>
