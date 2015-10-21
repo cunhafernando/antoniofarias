@@ -23,6 +23,6 @@
                     <p class="copyright text-muted">Copyright &copy; Antonio Farias 2014</p>
                 </div>
             </div>
-        </div>
+        </div><p class="copyright text-muted">Produzido por: Phocus Desenvolvimento Web</p>
     </footer>
     <div style="clear:both; width:0; height:0; margin:0 ">&nbsp;</div>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title>Antonio Martins</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,9 +43,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Meu Blog</h1>
+                        <h1>Antônio Farias</h1>
                         <hr class="small">
-                        <span class="subheading">Assuntos Diversos</span>
+                        <span class="subheading">Advogado</span>
                     </div>
                 </div>
             </div>

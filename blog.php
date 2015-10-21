@@ -50,7 +50,7 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/sertao.jpg')">
+    <header class="intro-header" style="background-image: url('img/taquaritinga_do_norte.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -92,7 +92,7 @@
 
                 <!-- Comments Form -->
                 <div class="well">
-                    <h4>Leave a Comment:</h4>
+                    <!--<h4>Deixe seu comentário:</h4>-->
                     <cms:embed 'comments_form.html' />
                 </div>
 

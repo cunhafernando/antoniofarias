@@ -40,12 +40,12 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/sol_serra_dos_bois_sobre.jpg')">
+    <header class="intro-header" style="background-image: url('img/taquaritinga-sobre.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="page-heading">
-                        <h1>Antônio Martins de Farias</h1>
+                        <h1>Antônio Farias</h1>
                         <hr class="small">
                         <span class="subheading">Minha História</span>
                     </div>
