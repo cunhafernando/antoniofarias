@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<cms:link 'index.php' />" <cms:if k_template_name=='index.php'>class="current"</cms:if>>Antônio Farias</a>
+                <a class="navbar-brand" href="<cms:link 'index.php' />" <cms:if k_template_name=='index.php'>class="current"</cms:if>>Antônio Martins de Farias</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

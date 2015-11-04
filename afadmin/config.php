@@ -30,7 +30,7 @@
     // -4.5   Venezuela (UTC-04:30)
     // -6     United States (Central Time) (UTC-06:00)
     // -8     United States (Pacific Time) (UTC-08:00)
-    define( 'K_GMT_OFFSET', +5.5 );
+    define( 'K_GMT_OFFSET', -2 );
 
     // 3.
     // Define the charset used by your site. If in any doubt, leave the default utf-8.
@@ -88,11 +88,11 @@
 
     // 13.
     // Your Email address. Will be used in contact forms.
-    define( 'K_EMAIL_TO', 'cunhafernandofj@gmail.com' );
+    define( 'K_EMAIL_TO', 'contato@antoniofarias.com.br' );
 
     // 14.
     // Will be used as the sender of messages delivered by contact forms to the address above.
-    define( 'K_EMAIL_FROM', 'fernando.cunha@phocusweb.com.br' );
+    define( 'K_EMAIL_FROM', 'admin@antoniofarias.com.br' );
 
     // 15.
     // By default the inbuilt php function 'mail()' is used to deliver messages.
@@ -134,7 +134,7 @@
     // 22.
     // Language used for localization of admin panel. Needs to have a corresponding language file in couch folder.
     // Change to 'DE' for German or 'FR' for French.
-    define( 'K_ADMIN_LANG', 'EN' );
+    define( 'K_ADMIN_LANG', 'PT_BR' );
 
     // 23.
     // Uncomment the following line if you wish to format self-closing HTML tags the old way e.g. as <br> instead of <br/>
